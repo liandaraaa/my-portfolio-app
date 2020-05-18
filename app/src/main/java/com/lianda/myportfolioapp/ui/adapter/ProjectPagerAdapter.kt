@@ -5,12 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
-import com.lianda.kecipirduplicateapp.utils.showImageUrl
+import com.lianda.myportfolioapp.utils.showImageUrl
 import com.lianda.myportfolioapp.R
-import kotlinx.android.synthetic.main.item_project.view.*
 import kotlinx.android.synthetic.main.item_project.view.imgProject
 import kotlinx.android.synthetic.main.item_project.view.pbProject
-import kotlinx.android.synthetic.main.item_project_detail.view.*
 
 class ProjectPagerAdapter (val context:Context, val datas:MutableList<String>, val onBannerClicked:((image:String)->Unit)? =null): PagerAdapter() {
 

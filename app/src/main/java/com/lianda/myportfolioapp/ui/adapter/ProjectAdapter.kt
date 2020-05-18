@@ -1,12 +1,11 @@
 package com.lianda.myportfolioapp.ui.adapter
 
 import android.content.Context
-import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.lianda.kecipirduplicateapp.utils.showImageUrl
+import com.lianda.myportfolioapp.utils.showImageUrl
 import com.lianda.myportfolioapp.R
 import com.lianda.myportfolioapp.data.model.Project
 import kotlinx.android.synthetic.main.item_project.view.*

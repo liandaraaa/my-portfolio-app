@@ -10,4 +10,6 @@
     <string name="hint_password">Password</string>
     <string name="action_login">Login</string>
     <string name="error_field_required">Field Required</string>
+    <string name="label_greetings">Alo Guest, Welcome To</string>
+    <string name="label_login">Please login to know me more</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.lianda.kecipirduplicateapp.utils
+package com.lianda.myportfolioapp.utils
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -6,17 +6,13 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
-import com.facebook.shimmer.ShimmerFrameLayout
-import com.kennyc.view.MultiStateView
 
 fun View.gone(){
     this.visibility = View.GONE
@@ -63,13 +59,4 @@ fun ImageView.showImageUrl(context:Context, url:String, progressBar: ProgressBar
 
         })
         .into(this)
-}
-
-fun ShimmerFrameLayout.showLoading(){
-    this.startShimmer()
-}
-
-fun ShimmerFrameLayout.hideLoading(){
-    this.stopShimmer()
-    this.gone()
 }

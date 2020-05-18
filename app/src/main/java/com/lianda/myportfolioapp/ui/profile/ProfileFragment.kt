@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.lianda.kecipirduplicateapp.utils.showImageUrl
+import com.lianda.myportfolioapp.utils.showImageUrl
 
 import com.lianda.myportfolioapp.R
 import com.lianda.myportfolioapp.data.model.User

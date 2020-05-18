@@ -3,7 +3,6 @@ package com.lianda.myportfolioapp.ui.login
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.widget.doOnTextChanged
 import com.lianda.myportfolioapp.R
 import com.lianda.myportfolioapp.data.preference.PortfolioPreference
 import com.lianda.myportfolioapp.ui.main.MainActivity
@@ -47,7 +46,9 @@ class LoginActivity : AppCompatActivity() {
     private fun onLoginFailed() {
         if (tilEmail.editText?.text?.isEmpty() == true) {
             tilEmail.error = getString(R.string.error_field_required)
-        } else if (tilPassword.editText?.text?.isEmpty() == true) {
+        }
+
+        if (tilPassword.editText?.text?.isEmpty() == true) {
             tilPassword.error = getString(R.string.error_field_required)
         }
     }

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.lianda.kecipirduplicateapp.utils.replaceFragment
+import com.lianda.myportfolioapp.utils.replaceFragment
 import com.lianda.myportfolioapp.R
 import com.lianda.myportfolioapp.ui.profile.ProfileFragment
 import com.lianda.myportfolioapp.ui.project.ProjectFragment
