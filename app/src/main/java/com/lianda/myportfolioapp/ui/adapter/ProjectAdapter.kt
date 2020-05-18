@@ -30,7 +30,7 @@ class ProjectAdapter(
     inner class ProjectViewHolder(view:View):RecyclerView.ViewHolder(view){
         fun bind(data:Project){
             with(itemView){
-                imgProject.showImageUrl(context, data.images.first())
+                imgProject.showImageUrl(context, data.images.first(), pbProject)
                 tvName.text = data.name
 
                 setOnClickListener {

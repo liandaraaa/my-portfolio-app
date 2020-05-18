@@ -5,14 +5,18 @@ import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.facebook.shimmer.ShimmerFrameLayout
+import com.kennyc.view.MultiStateView
 
 fun View.gone(){
     this.visibility = View.GONE
@@ -30,7 +34,8 @@ fun AppCompatActivity.replaceFragment(layoutId:Int, fragment:Fragment, isBackSta
         .commit()
 }
 
-fun ImageView.showImageUrl(context:Context, url:String){
+fun ImageView.showImageUrl(context:Context, url:String, progressBar: ProgressBar){
+    progressBar.visible()
     Glide.with(context).load(url)
         .listener(object:RequestListener<Drawable>{
             override fun onLoadFailed(
@@ -39,6 +44,7 @@ fun ImageView.showImageUrl(context:Context, url:String){
                 target: Target<Drawable>?,
                 isFirstResource: Boolean
             ): Boolean {
+                progressBar.gone()
                 Log.d("product", e?.message.toString())
                 return false
             }
@@ -50,6 +56,7 @@ fun ImageView.showImageUrl(context:Context, url:String){
                 dataSource: DataSource?,
                 isFirstResource: Boolean
             ): Boolean {
+                progressBar.gone()
                 Log.d("product", "load success")
                 return false
             }

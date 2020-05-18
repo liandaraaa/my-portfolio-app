@@ -1,9 +1,13 @@
 package com.lianda.myportfolioapp.data.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Project(
     val images: MutableList<String>,
     val name: String
-)
+) : Parcelable
 
 fun getAllProjects(): MutableList<Project> {
     return mutableListOf(
@@ -32,6 +36,7 @@ fun getAllProjects(): MutableList<Project> {
             name = "Redkendi"
         ), Project(
             images = mutableListOf(
+                "https://lh6.googleusercontent.com/6hzKA7M_hJwrGsBEl0unGcR_4KczdphlEhJLajw-_0aItEoRSvmIXxxGzC8JbJUfER0rZvotmzKsMtF4CzqLK90fZ_E4lxN9tOPwMbw79qM7yeU15BoTTXITpFGepuXeSTtIlJNY1_c",
                 "https://lh4.googleusercontent.com/M_rrPKREdb_pFxyzUzFLxRQyyQx8u4oT-fK_nC6BykwesctnhM68L1_qPyaDJfxJ1Ldw3GHLEbVEMS22mnIjDanyEesJDh7Z5-UMd6CP",
                 "https://lh6.googleusercontent.com/6zdFKipzQHYmm7NwD2p4I0YpXHnwIj6X0n2SCSr2pXy-5JEg6ndlcGoaaZ7G8DepaMKH0mPSeOWA4KywUeTG6nju_gMDczah6CP2BIoO",
                 "https://lh5.googleusercontent.com/VH1baEjc8mSqLAeDTlWSU3Wi6d3PUnDBPmgS9L1s00RKYCzc4_8OqYDeeqDBxKjA3cJ3zapM8Us0oYAXX8FNiT7KaC9HmSvCKSc4I9T4"
@@ -40,7 +45,7 @@ fun getAllProjects(): MutableList<Project> {
         ),
         Project(
             images = mutableListOf(
-                "https://lh6.googleusercontent.com/Buws9ckWry4XqzQKOY1HGLQ5TnHPL530XEKzXTvomkaSBy7TfqJUFevybU_sYSTEnZEsFDiediBPY1mcdHhJLc-QJcJD5X6Q6OjKzL8K",
+
                 "https://lh4.googleusercontent.com/30IOZhkpp-N81N3IhGfCOjc433SEOVRetdzoBIsNu1-4ZSXYcfCmIQ9AVxIlE7VJ5HoTBmqfOWP9zzIpl8tzzk4rVNxalyKRFsO9VkAH",
                 "https://lh6.googleusercontent.com/Q1CrLYUE05ukGC0BKkMLrg2lLZ6wBKqU4THy5aTmRBvMDbTfNxIJwdXEYjVLyBFFVl53W2oy26A369fZDEyP_Mzm-HICmKNF2TLxNOvq",
                 "https://lh3.googleusercontent.com/cM6fzokUmqpnHGIJCTq-oU5RbPH0JURZFc9QjGnZ1ICW_uC0swVerSjW3BKgPx5uLXd0oUeCEnyI1jB2he91wFWI-x5onCW4MFQ6AU2l"

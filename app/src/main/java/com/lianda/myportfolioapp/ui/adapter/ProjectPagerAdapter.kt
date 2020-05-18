@@ -8,14 +8,17 @@ import androidx.viewpager.widget.PagerAdapter
 import com.lianda.kecipirduplicateapp.utils.showImageUrl
 import com.lianda.myportfolioapp.R
 import kotlinx.android.synthetic.main.item_project.view.*
+import kotlinx.android.synthetic.main.item_project.view.imgProject
+import kotlinx.android.synthetic.main.item_project.view.pbProject
+import kotlinx.android.synthetic.main.item_project_detail.view.*
 
-class ProjectPagerAdapter (val context:Context, val datas:List<String>, val onBannerClicked:((image:String)->Unit)? =null): PagerAdapter() {
+class ProjectPagerAdapter (val context:Context, val datas:MutableList<String>, val onBannerClicked:((image:String)->Unit)? =null): PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        val layout = LayoutInflater.from(context).inflate(R.layout.item_project, container, false)
+        val layout = LayoutInflater.from(context).inflate(R.layout.item_project_detail, container, false)
 
         with(layout){
-            imgProject.showImageUrl(context, datas[position])
+            imgProject.showImageUrl(context, datas[position], pbProject)
 
             setOnClickListener {
                 onBannerClicked?.invoke(datas[position])
