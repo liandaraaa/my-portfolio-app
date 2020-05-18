@@ -3,13 +3,17 @@ package com.lianda.myportfolioapp.ui.main
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.lianda.myportfolioapp.utils.replaceFragment
 import com.lianda.myportfolioapp.R
+import com.lianda.myportfolioapp.data.preference.PortfolioPreference
+import com.lianda.myportfolioapp.ui.login.LoginActivity
 import com.lianda.myportfolioapp.ui.profile.ProfileFragment
 import com.lianda.myportfolioapp.ui.project.ProjectFragment
+import com.lianda.myportfolioapp.utils.Constans.KEY_IS_LOGGED_IN
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 
@@ -25,6 +29,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     private var prevMenuItem: MenuItem? = null
+
+    private val preference:PortfolioPreference by lazy {
+        PortfolioPreference(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,12 +67,28 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         prevMenuItem = bnvMain.menu.getItem(position)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_logout, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menuLogout) doLogout()
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onBackPressed() {
         if (bnvMain.selectedItemId == R.id.menuProject) {
             finish()
         } else {
             selectFragment(ProjectFragment(), PROJECT_PAGE)
         }
+    }
+
+    private fun doLogout(){
+        preference.saveBoolean(KEY_IS_LOGGED_IN, false)
+        LoginActivity.start(this)
+        finishAffinity()
     }
 
 }

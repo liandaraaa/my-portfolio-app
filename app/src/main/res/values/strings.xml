@@ -12,4 +12,5 @@
     <string name="error_field_required">Field Required</string>
     <string name="label_greetings">Alo Guest, Welcome To</string>
     <string name="label_login">Please login to know me more</string>
+    <string name="menu_logout">Logout</string>
 </resources>
