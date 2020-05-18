@@ -14,6 +14,7 @@ import com.lianda.myportfolioapp.ui.login.LoginActivity
 import com.lianda.myportfolioapp.ui.profile.ProfileFragment
 import com.lianda.myportfolioapp.ui.project.ProjectFragment
 import com.lianda.myportfolioapp.utils.Constans.KEY_IS_LOGGED_IN
+import com.lianda.myportfolioapp.utils.showUncancelableAlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.menuLogout) doLogout()
+        if(item.itemId == R.id.menuLogout) showLogoutDialog()
         return super.onOptionsItemSelected(item)
     }
 
@@ -89,6 +90,17 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         preference.saveBoolean(KEY_IS_LOGGED_IN, false)
         LoginActivity.start(this)
         finishAffinity()
+    }
+
+    private fun showLogoutDialog(){
+        showUncancelableAlertDialog(
+            title = getString(R.string.title_thank_you),
+            message = getString(R.string.message_thankyour_for_visiting),
+            positive = getString(R.string.action_ok),
+            positiveListener = {
+                doLogout()
+            }
+        )
     }
 
 }

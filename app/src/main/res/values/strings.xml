@@ -1,16 +1,25 @@
 <resources>
     <string name="app_name">My Portfolio App</string>
+
     <string name="menu_project">Project</string>
     <string name="menu_profile">Profile</string>
+    <string name="menu_logout">Logout</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sample_project_name">Bisma</string>
+
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
+
     <string name="action_login">Login</string>
+    <string name="action_ok">OK</string>
+
     <string name="error_field_required">Field Required</string>
-    <string name="label_greetings">Alo Guest, Welcome To</string>
+
+    <string name="label_greetings">Halo Guest, Welcome To</string>
     <string name="label_login">Please login to know me more</string>
-    <string name="menu_logout">Logout</string>
+
+    <string name="title_thank_you">Thank You</string>
+
+    <string name="message_thankyour_for_visiting">Thank you for visiting my Portfolio App. Hope you enjoy my presentation and come again later</string>
+
 </resources>
