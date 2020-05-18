@@ -1,5 +1,6 @@
 package com.lianda.myportfolioapp.ui.main
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -10,15 +11,20 @@ import com.lianda.myportfolioapp.R
 import com.lianda.myportfolioapp.ui.profile.ProfileFragment
 import com.lianda.myportfolioapp.ui.project.ProjectFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
-    companion object{
+    companion object {
         const val PROJECT_PAGE = 0
         const val PROFILE_PAGE = 1
+
+        fun start(context: Context) {
+            context.startActivity<MainActivity>()
+        }
     }
 
-    private var prevMenuItem: MenuItem?= null
+    private var prevMenuItem: MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,22 +36,22 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.menuProject -> selectFragment(ProjectFragment(), PROJECT_PAGE)
             R.id.menuProfile -> selectFragment(ProfileFragment(), PROFILE_PAGE)
         }
         return true
     }
 
-    private fun selectFragment(fragment: Fragment, position: Int){
+    private fun selectFragment(fragment: Fragment, position: Int) {
         replaceFragment(R.id.contentContainer, fragment)
         changeMenuStatus(position)
     }
 
-    private fun changeMenuStatus(position:Int){
-        if (prevMenuItem != null){
+    private fun changeMenuStatus(position: Int) {
+        if (prevMenuItem != null) {
             prevMenuItem?.isChecked = false
-        }else{
+        } else {
             bnvMain.menu.getItem(PROJECT_PAGE).isChecked = true
         }
 
@@ -54,9 +60,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     override fun onBackPressed() {
-        if (bnvMain.selectedItemId == R.id.menuProject){
+        if (bnvMain.selectedItemId == R.id.menuProject) {
             finish()
-        }else{
+        } else {
             selectFragment(ProjectFragment(), PROJECT_PAGE)
         }
     }

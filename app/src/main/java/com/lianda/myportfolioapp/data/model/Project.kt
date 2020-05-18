@@ -37,7 +37,6 @@ fun getAllProjects(): MutableList<Project> {
         ), Project(
             images = mutableListOf(
                 "https://lh6.googleusercontent.com/6hzKA7M_hJwrGsBEl0unGcR_4KczdphlEhJLajw-_0aItEoRSvmIXxxGzC8JbJUfER0rZvotmzKsMtF4CzqLK90fZ_E4lxN9tOPwMbw79qM7yeU15BoTTXITpFGepuXeSTtIlJNY1_c",
-                "https://lh4.googleusercontent.com/M_rrPKREdb_pFxyzUzFLxRQyyQx8u4oT-fK_nC6BykwesctnhM68L1_qPyaDJfxJ1Ldw3GHLEbVEMS22mnIjDanyEesJDh7Z5-UMd6CP",
                 "https://lh6.googleusercontent.com/6zdFKipzQHYmm7NwD2p4I0YpXHnwIj6X0n2SCSr2pXy-5JEg6ndlcGoaaZ7G8DepaMKH0mPSeOWA4KywUeTG6nju_gMDczah6CP2BIoO",
                 "https://lh5.googleusercontent.com/VH1baEjc8mSqLAeDTlWSU3Wi6d3PUnDBPmgS9L1s00RKYCzc4_8OqYDeeqDBxKjA3cJ3zapM8Us0oYAXX8FNiT7KaC9HmSvCKSc4I9T4"
             ),

@@ -7,14 +7,13 @@ import android.view.MenuItem
 import com.lianda.myportfolioapp.R
 import com.lianda.myportfolioapp.data.model.Project
 import com.lianda.myportfolioapp.ui.adapter.ProjectPagerAdapter
+import com.lianda.myportfolioapp.utils.Constans.KEY_PROJECT
 import kotlinx.android.synthetic.main.activity_project_detail.*
 import org.jetbrains.anko.startActivity
 
 class ProjectDetailActivity : AppCompatActivity() {
 
     companion object {
-        const val KEY_PROJECT = "key_project"
-
         fun start(context: Context, project: Project) {
             context.startActivity<ProjectDetailActivity>(
                 KEY_PROJECT to project

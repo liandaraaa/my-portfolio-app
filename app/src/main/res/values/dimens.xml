@@ -8,4 +8,7 @@
     <dimen name="dimen_30dp">30dp</dimen>
     <dimen name="dimen_2dp">2dp</dimen>
     <dimen name="dimen_300dp">300dp</dimen>
+    <dimen name="dimen_32dp">32dp</dimen>
+    <dimen name="text_size_36sp">36sp</dimen>
+    <dimen name="text_size_24sp">24sp</dimen>
 </resources>
