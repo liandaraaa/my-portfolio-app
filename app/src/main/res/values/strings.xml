@@ -12,13 +12,14 @@
 
     <string name="action_login">Login</string>
     <string name="action_ok">OK</string>
+    <string name="action_cancel">CANCEL</string>
 
     <string name="error_field_required">Field Required</string>
 
     <string name="label_greetings">Halo Guest, Welcome To</string>
     <string name="label_login">Please login to know me more</string>
 
-    <string name="title_thank_you">Thank You</string>
+    <string name="title_thank_you">Thank You, %s</string>
 
     <string name="message_thankyour_for_visiting">Thank you for visiting my Portfolio App. Hope you enjoy my presentation and come again later</string>
 

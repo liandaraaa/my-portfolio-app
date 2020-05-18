@@ -15,6 +15,7 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.lianda.myportfolioapp.R
 
 fun View.gone() {
     this.visibility = View.GONE
@@ -81,6 +82,11 @@ fun AppCompatActivity.showUncancelableAlertDialog(
         positive
     ) { dialogInterface, _ ->
         positiveListener.invoke()
+        dialogInterface.cancel()
+    }
+    dialog.setNegativeButton(
+        getString(R.string.action_cancel)
+    ) { dialogInterface, _ ->
         dialogInterface.cancel()
     }
     dialog.create()

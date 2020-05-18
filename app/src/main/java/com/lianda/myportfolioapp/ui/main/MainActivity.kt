@@ -14,6 +14,7 @@ import com.lianda.myportfolioapp.ui.login.LoginActivity
 import com.lianda.myportfolioapp.ui.profile.ProfileFragment
 import com.lianda.myportfolioapp.ui.project.ProjectFragment
 import com.lianda.myportfolioapp.utils.Constans.KEY_IS_LOGGED_IN
+import com.lianda.myportfolioapp.utils.Constans.KEY_USER_LOGGED_IN
 import com.lianda.myportfolioapp.utils.showUncancelableAlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
@@ -88,13 +89,15 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     private fun doLogout(){
         preference.saveBoolean(KEY_IS_LOGGED_IN, false)
+        preference.saveString(KEY_USER_LOGGED_IN, "")
         LoginActivity.start(this)
         finishAffinity()
     }
 
     private fun showLogoutDialog(){
+        val currentUser = preference.getString(KEY_USER_LOGGED_IN)
         showUncancelableAlertDialog(
-            title = getString(R.string.title_thank_you),
+            title = String.format(getString(R.string.title_thank_you), currentUser),
             message = getString(R.string.message_thankyour_for_visiting),
             positive = getString(R.string.action_ok),
             positiveListener = {

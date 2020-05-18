@@ -7,6 +7,7 @@ import com.lianda.myportfolioapp.R
 import com.lianda.myportfolioapp.data.preference.PortfolioPreference
 import com.lianda.myportfolioapp.ui.main.MainActivity
 import com.lianda.myportfolioapp.utils.Constans.KEY_IS_LOGGED_IN
+import com.lianda.myportfolioapp.utils.Constans.KEY_USER_LOGGED_IN
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
 
@@ -59,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun onLoginSuccess() {
         preference.saveBoolean(KEY_IS_LOGGED_IN, true)
+        preference.saveString(KEY_USER_LOGGED_IN, tilEmail.editText?.text.toString())
         toMainActivity()
     }
 
