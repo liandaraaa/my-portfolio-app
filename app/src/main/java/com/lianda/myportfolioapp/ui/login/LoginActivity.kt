@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
     private fun onLoginFailed() {
         if (tilEmail.editText?.text?.isEmpty() == true) {
             tilEmail.error = getString(R.string.error_field_required)
-        } else if (tilEmail.editText?.text?.isEmpty() == true) {
+        } else if (tilPassword.editText?.text?.isEmpty() == true) {
             tilPassword.error = getString(R.string.error_field_required)
         }
     }
